@@ -14,5 +14,5 @@ app.use("/dashboard", require("./routes/todos"));
 
 // Start server
 app.listen(process.env.PORT, () => {
-  console.log(`Server is starting on port ${PORT}`);
+  console.log(`Server is starting on port ${process.env.PORT}`);
 });
