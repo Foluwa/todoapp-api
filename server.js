@@ -1,16 +1,18 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+require("dotenv").config();
 
-//middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-//routes
+// Routes
 app.use("/authentication", require("./routes/auth"));
 app.use("/dashboard", require("./routes/todos"));
 
 
-app.listen(5000, () => {
-  console.log(`Server is starting on port 5000`);
+// Start server
+app.listen(process.env.PORT, () => {
+  console.log(`Server is starting on port ${PORT}`);
 });
