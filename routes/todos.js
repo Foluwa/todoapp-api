@@ -9,7 +9,7 @@ router.get("/", authorize, async (req, res) => {
       "SELECT u.user_name, t.todo_id, t.description FROM users AS u LEFT JOIN todos AS t ON u.user_id = t.user_id WHERE u.user_id = $1",
       [req.user.id]
     );
-
+    
     res.json(user.rows);
   } catch (err) {
     console.error(err.message);
